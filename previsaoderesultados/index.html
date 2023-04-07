@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Previsão de Resultado Futuro Com V//</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11134854598"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11134854598');
+    </script>
+    <!-- Event snippet for Website traffic conversion page -->
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11134854598/uNAECMLb8pYYEMbLwb0p'
+        });
+    </script>
+
+    <style>
+        .container {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            background-image: url('img/a.jpg');
+        }
+        
+        h1 {
+            font-family: 'Helvetica', sans-serif;
+            font-size: 3em;
+            color: #ffffff;
+        }
+        
+        p {
+            font-family: 'Helvetica', sans-serif;
+            color: #ffffff;
+        }
+        
+        p1 {
+            font-family: 'Helvetica', sans-serif;
+            color: #ffffff;
+        }
+        
+        body {
+            background-image: url('img/a.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Previsão de Resultado Futuro</h1>
+        <p>Insira as chances de cada equipe:</p>
+        <form>
+            <p1>Time 1:</p1> <input type="number" step="0.01" min="0" max="100" id="time1" required><br><br>
+            <p1>Time 2:</p1> <input type="number" step="0.01" min="0" max="100" id="time2" required><br><br>
+            <button type="button" onclick="preverResultado()"> Prever</button><br><br>
+        </form>
+        <p id="resultado"></p>
+
+        <script>
+            function preverResultado() {
+                var time1 = parseFloat(document.getElementById("time1").value);
+                var time2 = parseFloat(document.getElementById("time2").value);
+
+                if (isNaN(time1) || isNaN(time2) || time1 < 0 || time2 < 0 || time1 > 100 || time2 > 100) {
+                    document.getElementById("resultado").innerHTML = "Por favor, insira as chances em decimais de cada equipe.";
+                } else {
+                    var probTime1 = time1 / (time1 + time2);
+                    var probTime2 = time2 / (time1 + time2);
+                    var resultado = "Probabilidade da equipe 1 vencer: " + (probTime1 * 100).toFixed(2) + "%<br>";
+                    resultado += "Probabilidade da equipe 2 vencer: " + (probTime2 * 100).toFixed(2) + "%<br>";
+                    resultado += "Probabilidade de empate: " + ((1 - probTime1 - probTime2) * 100).toFixed(2) + "%<br>";
+
+
+                    document.getElementById("resultado").innerHTML = resultado;
+                }
+            }
+        </script>
+        <footer>
+
+            <p>Assinado por: V//</p>
+
+        </footer>
+    </div>
+
+
+</body>
+
+
+</html>
